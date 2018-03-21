@@ -14,6 +14,6 @@ public class SongActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         Song selectedSong = (Song) intent.getSerializableExtra("song");
-        Log.d("SongActivity", selectedSong.getArtist());
+        Log.d("songActivity", selectedSong.getArtist());
     }
 }

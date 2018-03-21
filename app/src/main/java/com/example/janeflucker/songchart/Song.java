@@ -1,10 +1,12 @@
 package com.example.janeflucker.songchart;
 
+import java.io.Serializable;
+
 /**
  * Created by janeflucker on 3/20/18.
  */
 
-public class Song {
+public class Song implements Serializable {
 
     private Integer ranking;
     private String artist;

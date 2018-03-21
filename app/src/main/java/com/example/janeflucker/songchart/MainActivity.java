@@ -1,7 +1,10 @@
 package com.example.janeflucker.songchart;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -21,17 +24,16 @@ public class MainActivity extends AppCompatActivity {
         ListView listView = findViewById(R.id.list);
         listView.setAdapter(songsAdaptor);
     }
+
+
+    public void onListItemClick(View listItem) {
+        Song selectedSong = (Song) listItem.getTag();
+
+        Log.d("MainActivity", selectedSong.getArtist());
+
+        Intent intent = new Intent(this, SongActivity.class);
+        intent.putExtra("song", selectedSong);
+
+        startActivity(intent);
+    }
 }
-
-
-
-//public void onListItemClick(View listItem) {
-//        Movie selectedMovie = (Movie) listItem.getTag();
-//
-//        Log.d("MainActivity", selectedMovie.getTitle());
-//
-//        Intent intent = new Intent(this, MovieActivity.class);
-//        intent.putExtra("movie", selectedMovie);
-//
-//        startActivity(intent);
-//        }
